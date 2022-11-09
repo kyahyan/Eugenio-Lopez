@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Eugenio Lopez</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="ewds">
+	<meta name="description" content="Eugenio Lopez Website">
+
+	<!-- Dark mode -->
+	<script type="text/javascript">
+		var theme = localStorage.getItem('data-theme');
+		var root = document.documentElement;
+		if (theme === 'dark' && theme !== undefined) {
+			root.classList.add('dark-mode');
+		} else {
+			root.classList.remove('dark-mode');
+		}
+	</script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/tiny-slider/tiny-slider.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/glightbox/css/glightbox.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/flatpickr/css/flatpickr.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/choices/css/choices.min.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body>
+	<!-- Offcanvas menu START -->
+	<div class="offcanvas offcanvas-w-500px offcanvas-end" tabindex="-1" id="offcanvasBookstay" aria-labelledby="offcanvasBookstayLabel">
+		<div class="offcanvas-header border-bottom px-3">
+			<h5 class="offcanvas-title" id="offcanvasBookstayLabel">Book a Room</h5>
+			<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		</div>
+		<div class="offcanvas-body form-control-bg-light d-flex flex-column px-3">
+			<!-- Form START -->
+			<form>
+				<!-- Pickup -->
+				<div class="mb-3">
+					<label class="form-label mb-0">Room & Suite Type</label>
+					<select class="form-select js-choice" data-search-enabled="true" aria-label=".form-select-sm">
+						<option value="">Select location</option>
+						<option>Agave suite</option>
+						<option>Olive Grove Suite</option>
+						<option>Palm Suite</option>
+						<option>Casa Green Suite</option>
+					</select>
+				</div>
+
+				<!-- Date -->
+				<div class="mb-3">
+					<label class="form-label mb-0">Check in</label>
+					<input type="text" class="form-control flatpickr" data-date-format="d M Y" placeholder="Select date">
+				</div>
+				
+				<!-- Date -->
+				<div class="mb-3">
+					<label class="form-label mb-0">Check out</label>
+					<input type="text" class="form-control flatpickr" data-date-format="d M Y" placeholder="Select date">
+				</div>
+
+				<!-- Occupant -->
+				<div class="mb-3">
+					<!-- Dropdown input -->
+					<label class="form-label mb-0">Guests & rooms</label>
+					<div class="dropdown guest-selector me-2">
+						<input type="text" class="form-guest-selector form-control selection-result" value="2 Guests 1 Room" data-bs-auto-close="outside" data-bs-toggle="dropdown">
+					
+						<!-- dropdown items -->
+						<ul class="dropdown-menu guest-selector-dropdown">
+							<!-- Adult -->
+							<li class="d-flex justify-content-between">
+								<div>
+									<h6 class="mb-0">Adults</h6>
+									<small>Ages 13 or above</small>
+								</div>
+
+								<div class="hstack gap-1 align-items-center">
+									<button type="button" class="btn btn-link adult-remove p-0 mb-0"><i class="bi bi-dash-circle fs-5 fa-fw"></i></button>
+									<h6 class="guest-selector-count mb-0 adults">2</h6>
+									<button type="button" class="btn btn-link adult-add p-0 mb-0"><i class="bi bi-plus-circle fs-5 fa-fw"></i></button>
+								</div>
+							</li>
+
+							<!-- Divider -->
+							<li class="dropdown-divider"></li>
+
+							<!-- Child -->
+							<li class="d-flex justify-content-between">
+								<div>
+									<h6 class="mb-0">Child</h6>
+									<small>Ages 13 below</small>
+								</div>
+
+								<div class="hstack gap-1 align-items-center">
+									<button type="button" class="btn btn-link child-remove p-0 mb-0" ><i class="bi bi-dash-circle fs-5 fa-fw"></i></button>
+									<h6 class="guest-selector-count mb-0 child">0</h6>
+									<button type="button" class="btn btn-link child-add p-0 mb-0" ><i class="bi bi-plus-circle fs-5 fa-fw"></i></button>
+								</div>
+							</li>
+
+							<!-- Divider -->
+							<li class="dropdown-divider"></li>
+
+							<!-- Rooms -->
+							<li class="d-flex justify-content-between">
+								<div>
+									<h6 class="mb-0">Rooms</h6>
+									<small>Max room 8</small>
+								</div>
+
+								<div class="hstack gap-1 align-items-center">
+									<button type="button" class="btn btn-link room-remove p-0 mb-0" ><i class="bi bi-dash-circle fs-5 fa-fw"></i></button>
+									<h6 class="guest-selector-count mb-0 rooms">1</h6>
+									<button type="button" class="btn btn-link room-add p-0 mb-0" ><i class="bi bi-plus-circle fs-5 fa-fw"></i></button>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Buttons -->
+				<div class="text-center">
+					<button class="btn btn-primary-soft w-100 mb-0">Check Availability</button>
+				</div>
+			</form>
+			<!-- Form END -->
+
+			<!-- List -->
+			<div class="bg-light p-3 rounded mt-auto">
+				<h6>Why Book Direct?</h6>
+				<ul class="small ps-3">
+					<li class="mb-2">10% discount is applied</li>
+					<li class="mb-2">15% off on spa treatment</li>
+					<li class="mb-2">Best price guaranteed</li>
+					<li class="mb-2">Daily complimentary sunrise yoga</li>
+					<li class="mb-2">Early check-in and late check-out</li>
+				</ul>
+			</div>
+		</div>	
+	</div>
+	<!-- Offcanvas menu END -->
+
+<!-- Header START -->
+<header class="navbar-light header-sticky">
+	<!-- Logo Nav START -->
+	<nav class="navbar navbar-expand-xl">
+		<div class="container-fluid px-md-5">
+			<!-- Logo START -->
+			<a class="navbar-brand" href="index.html">
+				<img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
+				<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
+			</a>
+			<!-- Logo END -->
+            	<!-- Responsive navbar toggler -->
+			<button class="navbar-toggler ms-auto mx-3 me-md-0 p-0 p-sm-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-animation">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</button>
+
+			<!-- Main navbar START -->
+			<div class="navbar-collapse collapse" id="navbarCollapse">
+				<ul class="navbar-nav navbar-nav-scroll mx-auto">
+
+				<!-- Nav item Link -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="listingMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Eugenio Lopez</a>
+                    <ul class="dropdown-menu" aria-labelledby="listingMenu">
+                        <li> <a class="dropdown-item" href="book.html">Book</a></li>
+                        <li> <a class="dropdown-item" href="compare-listing.html">Compare Listing</a></li>
+                        <li> <a class="dropdown-item" href="offer-detail.html">Offer Detail</a></li>
+                    </ul>
+                </li>
+
+					<!-- Nav item Link -->
+					<li class="nav-item"> <a class="nav-link" href="ourstory.html">Our Story</a> </li>
+
+					<!-- Nav item Link -->
+					<li class="nav-item"> <a class="nav-link" href="experience.html">Experience</a> </li>
+
+					<!-- Nav item Link -->
+					<li class="nav-item"> <a class="nav-link" href="#">Rooms & Suites</a> </li>
+
+					<!-- Nav item Link -->
+					<li class="nav-item"> <a class="nav-link" href="offer-detail.html">Offers</a> </li>
+
+					<!-- Nav item Link -->
+					<li class="nav-item"> <a class="nav-link" href="#">Gallery</a> </li>
+
+                    <!-- Nav item Link -->
+                    <li class="nav-item"> <a class="nav-link" href="contact.html">Contact Us</a> </li>
+				</ul>
+			</div>
+			<!-- Main navbar END -->
+
+			<!-- Profile and Notification START -->
+			<ul class="nav flex-row align-items-center list-unstyled ms-xl-auto">
+				<!-- Profile dropdown START -->
+				<li class="nav-item ms-3 dropdown">
+					<!-- Avatar -->
+					<a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
+						<img class="avatar-img rounded-2" src="assets/images/avatar/01.jpg" alt="avatar">
+					</a>
+
+					<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
+						<!-- Profile info -->
+						<li class="px-3 mb-3">
+							<div class="d-flex align-items-center">
+								<!-- Avatar -->
+								<div class="avatar me-3">
+									<img class="avatar-img rounded-circle shadow" src="assets/images/avatar/01.jpg" alt="avatar">
+								</div>
+								<div>
+									<a class="h6 mt-2 mt-sm-0" href="#">Boyet Colasino</a>
+									<p class="small m-0">boyet123@gmail.com</p>
+								</div>
+							</div>
+						</li>
+
+						<!-- Links -->
+						<li> <hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item" href="#"><i class="bi bi-bookmark-check fa-fw me-2"></i>My Bookings</a></li>
+						<li><a class="dropdown-item" href="#"><i class="bi bi-heart fa-fw me-2"></i>My Wishlist</a></li>
+						<li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>Settings</a></li>
+						<li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>Help Center</a></li>
+						<li><a class="dropdown-item bg-danger-soft-hover" href="#"><i class="bi bi-power fa-fw me-2"></i>Sign Out</a></li>
+						<li> <hr class="dropdown-divider"></li>
+
+						<!-- Dark mode switch START -->
+						<li>
+							<div class="modeswitch-wrap" id="darkModeSwitch">
+								<div class="modeswitch-item">
+									<div class="modeswitch-icon"></div>
+								</div>
+								<span>Dark mode</span>
+							</div>
+						</li> 
+						<!-- Dark mode switch END -->
+					</ul>
+				</li>
+				<!-- Profile dropdown END -->
+			</ul>
+			<!-- Profile and Notification START -->
+
+		</div>
+	</nav>
+	<!-- Logo Nav END -->
+</header>
+<!-- Header END -->
+
+
+<main>
+	
+    <!-- =======================
+    Main Banner START -->
+    <section class="pt-3 pt-lg-5">
+        <div class="container">
+                <!-- Content and Image START -->
+                <div class="row g-4 g-lg-5">
+                    <!-- Content -->
+                    <div class="col-lg-6 position-relative mb-4 mb-md-0">
+                        <!-- Title -->
+                        <h1 class="mb-4 mt-md-5 display-5">Spend more moments together.
+                        
+                        </h1>
+                        <!-- Info -->
+                        <p class="mb-4">We bring you not only a stay option, but an experience in your budget to enjoy the luxury.</p>
+    
+                        <!-- Buttons -->
+                        <div class="hstack gap-4 flex-wrap align-items-center">
+                            <!-- Button -->
+                            <a href="#" class="btn btn-primary-soft mb-0">Discover Now</a>
+                            <!-- Story button -->
+                            <a data-glightbox="" data-gallery="office-tour" href="https://www.youtube.com/embed/tXHviS-4ygo" class="d-block">
+                                <!-- Avatar -->
+                                <div class="avatar avatar-md z-index-1 position-relative me-2">
+                                    <img class="avatar-img rounded-circle" src="assets/images/avatar/12.jpg" alt="avatar">
+                                    <!-- Video button -->
+                                    <div class="btn btn-xs btn-round btn-white shadow-sm position-absolute top-50 start-50 translate-middle z-index-9 mb-0"> 
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                                <div class="align-middle d-inline-block">
+                                    <h6 class="fw-normal small mb-0">Watch Overlooking hotel</h6>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Image -->
+                    <div class="col-lg-6 position-relative">
+    
+                        <img src="assets/images/bg/06.jpg" class="rounded" alt="">
+    
+    
+                    
+    
+                    </div>
+                </div>
+                <!-- Content and Image END -->
+                
+            <!-- Search START -->
+            <div class="row">
+                <div class="col-xl-10 position-relative mt-n3 mt-xl-n9">
+                    <!-- Title -->
+                    <h6 class="d-none d-xl-block mb-3">Check Availability</h6>
+    
+                    <!-- Booking from START -->
+                    <form class="card shadow rounded-3 position-relative p-4 pe-md-5 pb-5 pb-md-4">
+                        <div class="row g-4 align-items-center">
+                        
+                            <div class="col-lg-4">
+                                <div class="form-control-border form-control-transparent form-fs-md d-flex">
+                                    <!-- Icon -->
+                                    <i class="bi bi-door-closed fs-3 me-2 mt-2"></i>
+                                    <!-- Select input -->
+                                    <div class="flex-grow-1">
+                                        <label class="form-label">Room & Suite Type</label>
+                                        <select class="form-select js-choice" data-search-enabled="true">
+                                            <option value="">Select room</option>
+                                            <option>Luxury 1</option>
+                                            <option>Luxury 2</option>
+                                            <option>Luxury 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Check in -->
+                            <div class="col-lg-4">
+                                <div class="d-flex">
+                                    <!-- Icon -->
+                                    <i class="bi bi-calendar fs-3 me-2 mt-2"></i>
+                                    <!-- Date input -->
+                                    <div class="form-control-border form-control-transparent form-fs-md">
+                                        <label class="form-label">Check in - out</label>
+                                        <input type="text" class="form-control flatpickr" data-mode="range" placeholder="Select date" value="19 Sep to 28 Sep">
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- Guest -->
+                            <div class="col-lg-4">
+                                <div class="form-control-border form-control-transparent form-fs-md d-flex">
+                                    <!-- Icon -->
+                                    <i class="bi bi-person fs-3 me-2 mt-2"></i>
+                                    <!-- Dropdown input -->
+                                    <div class="w-100">
+                                        <label class="form-label">Guests & rooms</label>
+                                        <div class="dropdown guest-selector me-2">
+                                            <input type="text" class="form-guest-selector form-control selection-result" value="2 Guests 1 Room" data-bs-auto-close="outside" data-bs-toggle="dropdown">
+                                        
+                                            <!-- dropdown items -->
+                                            <ul class="dropdown-menu guest-selector-dropdown">
+                                                <!-- Adult -->
+                                                <li class="d-flex justify-content-between">
+                                                    <div>
+                                                        <h6 class="mb-0">Adults</h6>
+                                                        <small>Ages 13 or above</small>
+                                                    </div>
+    
+                                                    <div class="hstack gap-1 align-items-center">
+                                                        <button type="button" class="btn btn-link adult-remove p-0 mb-0"><i class="bi bi-dash-circle fs-5 fa-fw"></i></button>
+                                                        <h6 class="guest-selector-count mb-0 adults">2</h6>
+                                                        <button type="button" class="btn btn-link adult-add p-0 mb-0"><i class="bi bi-plus-circle fs-5 fa-fw"></i></button>
+                                                    </div>
+                                                </li>
+    
+                                                <!-- Divider -->
+                                                <li class="dropdown-divider"></li>
+    
+                                                <!-- Child -->
+                                                <li class="d-flex justify-content-between">
+                                                    <div>
+                                                        <h6 class="mb-0">Child</h6>
+                                                        <small>Ages 13 below</small>
+                                                    </div>
+    
+                                                    <div class="hstack gap-1 align-items-center">
+                                                        <button type="button" class="btn btn-link child-remove p-0 mb-0" ><i class="bi bi-dash-circle fs-5 fa-fw"></i></button>
+                                                        <h6 class="guest-selector-count mb-0 child">0</h6>
+                                                        <button type="button" class="btn btn-link child-add p-0 mb-0" ><i class="bi bi-plus-circle fs-5 fa-fw"></i></button>
+                                                    </div>
+                                                </li>
+    
+                                                <!-- Divider -->
+                                                <li class="dropdown-divider"></li>
+    
+                                                <!-- Rooms -->
+                                                <li class="d-flex justify-content-between">
+                                                    <div>
+                                                        <h6 class="mb-0">Rooms</h6>
+                                                        <small>Max room 8</small>
+                                                    </div>
+    
+                                                    <div class="hstack gap-1 align-items-center">
+                                                        <button type="button" class="btn btn-link room-remove p-0 mb-0" ><i class="bi bi-dash-circle fs-5 fa-fw"></i></button>
+                                                        <h6 class="guest-selector-count mb-0 rooms">1</h6>
+                                                        <button type="button" class="btn btn-link room-add p-0 mb-0" ><i class="bi bi-plus-circle fs-5 fa-fw"></i></button>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Button -->
+                        <div class="btn-position-md-middle">
+                            <a class="icon-lg btn btn-round btn-primary mb-0" href="#"><i class="bi bi-search fa-fw"></i></a>
+                        </div>
+                    </form>
+                    <!-- Booking from END -->
+                </div>
+            </div>
+            <!-- Search END -->
+        </div>
+    </section>
+    <!-- =======================
+    Main Banner END -->
+    
+    <!-- =======================
+    Best deal START -->
+    <section class="pb-2 pb-lg-5">
+        <div class="container">
+            <!-- Slider START -->
+            <div class="tiny-slider arrow-round arrow-blur arrow-hover">
+                <div class="tiny-slider-inner" data-autoplay="true" data-arrow="true" data-edge="2" data-dots="false" data-items-xl="3" data-items-lg="2" data-items-md="1">
+                    <!-- Slider item -->
+                    <div>
+                        <div class="card border rounded-3 overflow-hidden">
+                            <div class="row g-0 align-items-center">
+                                <!-- Image -->
+                                <div class="col-sm-6">
+                                    <img src="assets/images/offer/01.jpg" class="card-img rounded-0" alt="">
+                                </div>
+    
+                                <!-- Title and content -->
+                                <div class="col-sm-6">
+                                    <div class="card-body px-3">
+                                        <h6 class="card-title"><a href="offer-detail.html" class="stretched-link">Daily 50 Lucky Winners get a Free Stay</a></h6>
+                                        <p class="mb-0">Valid till: 15 Nov</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Slider item -->
+                    <div>
+                        <div class="card border rounded-3 overflow-hidden">
+                            <div class="row g-0 align-items-center">
+                                <!-- Image -->
+                                <div class="col-sm-6">
+                                    <img src="assets/images/offer/04.jpg" class="card-img rounded-0" alt="">
+                                </div>
+    
+                                <!-- Title and content -->
+                                <div class="col-sm-6">
+                                    <div class="card-body px-3">
+                                        <h6 class="card-title"><a href="offer-detail.html" class="stretched-link">Up to 60% OFF</a></h6>
+                                        <p class="mb-0">On Hotel Bookings Online</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Slider item -->
+                    <div>
+                        <div class="card border rounded-3 overflow-hidden">
+                            <div class="row g-0 align-items-center">
+                                <!-- Image -->
+                                <div class="col-sm-6">
+                                    <img src="assets/images/offer/03.jpg" class="card-img rounded-0" alt="">
+                                </div>
+    
+                                <!-- Title and content -->
+                                <div class="col-sm-6">
+                                    <div class="card-body px-3">
+                                        <h6 class="card-title"><a href="offer-detail.html" class="stretched-link">Book & Enjoy</a></h6>
+                                        <p class="mb-0">20% Off on the best available room rate</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Slider item -->
+                    <div>
+                        <div class="card border rounded-3 overflow-hidden">
+                            <div class="row g-0 align-items-center">
+                                <!-- Image -->
+                                <div class="col-sm-6">
+                                    <img src="assets/images/offer/02.jpg" class="card-img rounded-0" alt="">
+                                </div>
+    
+                                <!-- Title and content -->
+                                <div class="col-sm-6">
+                                    <div class="card-body px-3">
+                                        <h6 class="card-title"><a href="offer-detail.html" class="stretched-link">Hot Summer Nights</a></h6>
+                                        <p class="mb-0">Up to 3 nights free!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>	
+            <!-- Slider END -->
+        </div>
+    </section>
+    <!-- =======================
+    Best deal END -->
+    
+    <!-- =======================
+    About START -->
+    <section class="pb-0 pb-xl-5">
+        <div class="container">
+            <div class="row g-4 justify-content-between align-items-center">
+                <!-- Left side START -->
+                <div class="col-lg-5 position-relative">
+                    <!-- Svg Decoration -->
+                    <figure class="position-absolute top-0 start-0 translate-middle z-index-1 ms-4">
+                        <svg class="fill-warning" width="77px" height="77px">
+                            <path d="M76.997,41.258 L45.173,41.258 L67.676,63.760 L63.763,67.673 L41.261,45.171 L41.261,76.994 L35.728,76.994 L35.728,45.171 L13.226,67.673 L9.313,63.760 L31.816,41.258 L-0.007,41.258 L-0.007,35.725 L31.816,35.725 L9.313,13.223 L13.226,9.311 L35.728,31.813 L35.728,-0.010 L41.261,-0.010 L41.261,31.813 L63.763,9.311 L67.676,13.223 L45.174,35.725 L76.997,35.725 L76.997,41.258 Z"/>
+                        </svg>
+                    </figure>
+    
+                    <!-- Svg decoration -->
+                    <figure class="position-absolute bottom-0 end-0 d-none d-md-block mb-n5 me-n4">
+                        <svg height="400" class="fill-primary opacity-2" viewBox="0 0 340 340">
+                            <circle cx="194.2" cy="2.2" r="2.2"></circle>
+                            <circle cx="2.2" cy="2.2" r="2.2"></circle>
+                            <circle cx="218.2" cy="2.2" r="2.2"></circle>
+                            <circle cx="26.2" cy="2.2" r="2.2"></circle>
+                            <circle cx="242.2" cy="2.2" r="2.2"></circle>
+                            <circle cx="50.2" cy="2.2" r="2.2"></circle>
+                            <circle cx="266.2" cy="2.2" r="2.2"></circle>
+                            <circle cx="74.2" cy="2.2" r="2.2"></circle>
+                            <circle cx="290.2" cy="2.2" r="2.2"></circle>
+                            <circle cx="98.2" cy="2.2" r="2.2"></circle>
+                            <circle cx="314.2" cy="2.2" r="2.2"></circle>
+                            <circle cx="122.2" cy="2.2" r="2.2"></circle>
+                            <circle cx="338.2" cy="2.2" r="2.2"></circle>
+                            <circle cx="146.2" cy="2.2" r="2.2"></circle>
+                            <circle cx="170.2" cy="2.2" r="2.2"></circle>
+                            <circle cx="194.2" cy="26.2" r="2.2"></circle>
+                            <circle cx="2.2" cy="26.2" r="2.2"></circle>
+                            <circle cx="218.2" cy="26.2" r="2.2"></circle>
+                            <circle cx="26.2" cy="26.2" r="2.2"></circle>
+                            <circle cx="242.2" cy="26.2" r="2.2"></circle>
+                            <circle cx="50.2" cy="26.2" r="2.2"></circle>
+                            <circle cx="266.2" cy="26.2" r="2.2"></circle>
+                            <circle cx="74.2" cy="26.2" r="2.2"></circle>
+                            <circle cx="290.2" cy="26.2" r="2.2"></circle>
+                            <circle cx="98.2" cy="26.2" r="2.2"></circle>
+                            <circle cx="314.2" cy="26.2" r="2.2"></circle>
+                            <circle cx="122.2" cy="26.2" r="2.2"></circle>
+                            <circle cx="338.2" cy="26.2" r="2.2"></circle>
+                            <circle cx="146.2" cy="26.2" r="2.2"></circle>
+                            <circle cx="170.2" cy="26.2" r="2.2"></circle>
+                            <circle cx="194.2" cy="50.2" r="2.2"></circle>
+                            <circle cx="2.2" cy="50.2" r="2.2"></circle>
+                            <circle cx="218.2" cy="50.2" r="2.2"></circle>
+                            <circle cx="26.2" cy="50.2" r="2.2"></circle>
+                            <circle cx="242.2" cy="50.2" r="2.2"></circle>
+                            <circle cx="50.2" cy="50.2" r="2.2"></circle>
+                            <circle cx="266.2" cy="50.2" r="2.2"></circle>
+                            <circle cx="74.2" cy="50.2" r="2.2"></circle>
+                            <circle cx="290.2" cy="50.2" r="2.2"></circle>
+                            <circle cx="98.2" cy="50.2" r="2.2"></circle>
+                            <circle cx="314.2" cy="50.2" r="2.2"></circle>
+                            <circle cx="122.2" cy="50.2" r="2.2"></circle>
+                            <circle cx="338.2" cy="50.2" r="2.2"></circle>
+                            <circle cx="146.2" cy="50.2" r="2.2"></circle>
+                            <circle cx="170.2" cy="50.2" r="2.2"></circle>
+                            <circle cx="194.2" cy="74.2" r="2.2"></circle>
+                            <circle cx="2.2" cy="74.2" r="2.2"></circle>
+                            <circle cx="218.2" cy="74.2" r="2.2"></circle>
+                            <circle cx="26.2" cy="74.2" r="2.2"></circle>
+                            <circle cx="242.2" cy="74.2" r="2.2"></circle>
+                            <circle cx="50.2" cy="74.2" r="2.2"></circle>
+                            <circle cx="266.2" cy="74.2" r="2.2"></circle>
+                            <circle cx="74.2" cy="74.2" r="2.2"></circle>
+                            <circle cx="290.2" cy="74.2" r="2.2"></circle>
+                            <circle cx="98.2" cy="74.2" r="2.2"></circle>
+                            <circle cx="314.2" cy="74.2" r="2.2"></circle>
+                            <circle cx="122.2" cy="74.2" r="2.2"></circle>
+                            <circle cx="338.2" cy="74.2" r="2.2"></circle>
+                            <circle cx="146.2" cy="74.2" r="2.2"></circle>
+                            <circle cx="170.2" cy="74.2" r="2.2"></circle>
+                            <circle cx="194.2" cy="98.2" r="2.2"></circle>
+                            <circle cx="2.2" cy="98.2" r="2.2"></circle>
+                            <circle cx="218.2" cy="98.2" r="2.2"></circle>
+                            <circle cx="26.2" cy="98.2" r="2.2"></circle>
+                            <circle cx="242.2" cy="98.2" r="2.2"></circle>
+                            <circle cx="50.2" cy="98.2" r="2.2"></circle>
+                            <circle cx="266.2" cy="98.2" r="2.2"></circle>
+                            <circle cx="74.2" cy="98.2" r="2.2"></circle>
+                            <circle cx="290.2" cy="98.2" r="2.2"></circle>
+                            <circle cx="98.2" cy="98.2" r="2.2"></circle>
+                            <circle cx="314.2" cy="98.2" r="2.2"></circle>
+                            <circle cx="122.2" cy="98.2" r="2.2"></circle>
+                            <circle cx="338.2" cy="98.2" r="2.2"></circle>
+                            <circle cx="146.2" cy="98.2" r="2.2"></circle>
+                            <circle cx="170.2" cy="98.2" r="2.2"></circle>
+                            <circle cx="194.2" cy="122.2" r="2.2"></circle>
+                            <circle cx="2.2" cy="122.2" r="2.2"></circle>
+                            <circle cx="218.2" cy="122.2" r="2.2"></circle>
+                            <circle cx="26.2" cy="122.2" r="2.2"></circle>
+                            <circle cx="242.2" cy="122.2" r="2.2"></circle>
+                            <circle cx="50.2" cy="122.2" r="2.2"></circle>
+                            <circle cx="266.2" cy="122.2" r="2.2"></circle>
+                            <circle cx="74.2" cy="122.2" r="2.2"></circle>
+                            <circle cx="290.2" cy="122.2" r="2.2"></circle>
+                            <circle cx="98.2" cy="122.2" r="2.2"></circle>
+                            <circle cx="314.2" cy="122.2" r="2.2"></circle>
+                            <circle cx="122.2" cy="122.2" r="2.2"></circle>
+                            <circle cx="338.2" cy="122.2" r="2.2"></circle>
+                            <circle cx="146.2" cy="122.2" r="2.2"></circle>
+                            <circle cx="170.2" cy="122.2" r="2.2"></circle>
+                            <circle cx="194.2" cy="146.2" r="2.2"></circle>
+                            <circle cx="2.2" cy="146.2" r="2.2"></circle>
+                            <circle cx="218.2" cy="146.2" r="2.2"></circle>
+                            <circle cx="26.2" cy="146.2" r="2.2"></circle>
+                            <circle cx="242.2" cy="146.2" r="2.2"></circle>
+                            <circle cx="50.2" cy="146.2" r="2.2"></circle>
+                            <circle cx="266.2" cy="146.2" r="2.2"></circle>
+                            <circle cx="74.2" cy="146.2" r="2.2"></circle>
+                            <circle cx="290.2" cy="146.2" r="2.2"></circle>
+                            <circle cx="98.2" cy="146.2" r="2.2"></circle>
+                            <circle cx="314.2" cy="146.2" r="2.2"></circle>
+                            <circle cx="122.2" cy="146.2" r="2.2"></circle>
+                            <circle cx="338.2" cy="146.2" r="2.2"></circle>
+                            <circle cx="146.2" cy="146.2" r="2.2"></circle>
+                            <circle cx="170.2" cy="146.2" r="2.2"></circle>
+                            <circle cx="194.2" cy="170.2" r="2.2"></circle>
+                            <circle cx="2.2" cy="170.2" r="2.2"></circle>
+                            <circle cx="218.2" cy="170.2" r="2.2"></circle>
+                            <circle cx="26.2" cy="170.2" r="2.2"></circle>
+                            <circle cx="242.2" cy="170.2" r="2.2"></circle>
+                            <circle cx="50.2" cy="170.2" r="2.2"></circle>
+                            <circle cx="266.2" cy="170.2" r="2.2"></circle>
+                            <circle cx="74.2" cy="170.2" r="2.2"></circle>
+                            <circle cx="290.2" cy="170.2" r="2.2"></circle>
+                            <circle cx="98.2" cy="170.2" r="2.2"></circle>
+                            <circle cx="314.2" cy="170.2" r="2.2"></circle>
+                            <circle cx="122.2" cy="170.2" r="2.2"></circle>
+                            <circle cx="338.2" cy="170.2" r="2.2"></circle>
+                            <circle cx="146.2" cy="170.2" r="2.2"></circle>
+                            <circle cx="170.2" cy="170.2" r="2.2"></circle>
+                            <circle cx="194.2" cy="194.2" r="2.2"></circle>
+                            <circle cx="2.2" cy="194.2" r="2.2"></circle>
+                            <circle cx="218.2" cy="194.2" r="2.2"></circle>
+                            <circle cx="26.2" cy="194.2" r="2.2"></circle>
+                            <circle cx="242.2" cy="194.2" r="2.2"></circle>
+                            <circle cx="50.2" cy="194.2" r="2.2"></circle>
+                            <circle cx="266.2" cy="194.2" r="2.2"></circle>
+                            <circle cx="74.2" cy="194.2" r="2.2"></circle>
+                            <circle cx="290.2" cy="194.2" r="2.2"></circle>
+                            <circle cx="98.2" cy="194.2" r="2.2"></circle>
+                            <circle cx="314.2" cy="194.2" r="2.2"></circle>
+                            <circle cx="122.2" cy="194.2" r="2.2"></circle>
+                            <circle cx="338.2" cy="194.2" r="2.2"></circle>
+                            <circle cx="146.2" cy="194.2" r="2.2"></circle>
+                            <circle cx="170.2" cy="194.2" r="2.2"></circle>
+                            <circle cx="194.2" cy="218.2" r="2.2"></circle>
+                            <circle cx="2.2" cy="218.2" r="2.2"></circle>
+                            <circle cx="218.2" cy="218.2" r="2.2"></circle>
+                            <circle cx="26.2" cy="218.2" r="2.2"></circle>
+                            <circle cx="242.2" cy="218.2" r="2.2"></circle>
+                            <circle cx="50.2" cy="218.2" r="2.2"></circle>
+                            <circle cx="266.2" cy="218.2" r="2.2"></circle>
+                            <circle cx="74.2" cy="218.2" r="2.2"></circle>
+                            <circle cx="290.2" cy="218.2" r="2.2"></circle>
+                            <circle cx="98.2" cy="218.2" r="2.2"></circle>
+                            <circle cx="314.2" cy="218.2" r="2.2"></circle>
+                            <circle cx="122.2" cy="218.2" r="2.2"></circle>
+                            <circle cx="338.2" cy="218.2" r="2.2"></circle>
+                            <circle cx="146.2" cy="218.2" r="2.2"></circle>
+                            <circle cx="170.2" cy="218.2" r="2.2"></circle>
+                            <circle cx="194.2" cy="242.2" r="2.2"></circle>
+                            <circle cx="2.2" cy="242.2" r="2.2"></circle>
+                            <circle cx="218.2" cy="242.2" r="2.2"></circle>
+                            <circle cx="26.2" cy="242.2" r="2.2"></circle>
+                            <circle cx="242.2" cy="242.2" r="2.2"></circle>
+                            <circle cx="50.2" cy="242.2" r="2.2"></circle>
+                            <circle cx="266.2" cy="242.2" r="2.2"></circle>
+                            <circle cx="74.2" cy="242.2" r="2.2"></circle>
+                            <circle cx="290.2" cy="242.2" r="2.2"></circle>
+                            <circle cx="98.2" cy="242.2" r="2.2"></circle>
+                            <circle cx="314.2" cy="242.2" r="2.2"></circle>
+                            <circle cx="122.2" cy="242.2" r="2.2"></circle>
+                            <circle cx="338.2" cy="242.2" r="2.2"></circle>
+                            <circle cx="146.2" cy="242.2" r="2.2"></circle>
+                            <circle cx="170.2" cy="242.2" r="2.2"></circle>
+                            <circle cx="194.2" cy="266.2" r="2.2"></circle>
+                            <circle cx="2.2" cy="266.2" r="2.2"></circle>
+                            <circle cx="218.2" cy="266.2" r="2.2"></circle>
+                            <circle cx="26.2" cy="266.2" r="2.2"></circle>
+                            <circle cx="242.2" cy="266.2" r="2.2"></circle>
+                            <circle cx="50.2" cy="266.2" r="2.2"></circle>
+                            <circle cx="266.2" cy="266.2" r="2.2"></circle>
+                            <circle cx="74.2" cy="266.2" r="2.2"></circle>
+                            <circle cx="290.2" cy="266.2" r="2.2"></circle>
+                            <circle cx="98.2" cy="266.2" r="2.2"></circle>
+                            <circle cx="314.2" cy="266.2" r="2.2"></circle>
+                            <circle cx="122.2" cy="266.2" r="2.2"></circle>
+                            <circle cx="338.2" cy="266.2" r="2.2"></circle>
+                            <circle cx="146.2" cy="266.2" r="2.2"></circle>
+                            <circle cx="170.2" cy="266.2" r="2.2"></circle>
+                            <circle cx="194.2" cy="290.2" r="2.2"></circle>
+                            <circle cx="2.2" cy="290.2" r="2.2"></circle>
+                            <circle cx="218.2" cy="290.2" r="2.2"></circle>
+                            <circle cx="26.2" cy="290.2" r="2.2"></circle>
+                            <circle cx="242.2" cy="290.2" r="2.2"></circle>
+                            <circle cx="50.2" cy="290.2" r="2.2"></circle>
+                            <circle cx="266.2" cy="290.2" r="2.2"></circle>
+                            <circle cx="74.2" cy="290.2" r="2.2"></circle>
+                            <circle cx="290.2" cy="290.2" r="2.2"></circle>
+                            <circle cx="98.2" cy="290.2" r="2.2"></circle>
+                            <circle cx="314.2" cy="290.2" r="2.2"></circle>
+                            <circle cx="122.2" cy="290.2" r="2.2"></circle>
+                            <circle cx="338.2" cy="290.2" r="2.2"></circle>
+                            <circle cx="146.2" cy="290.2" r="2.2"></circle>
+                            <circle cx="170.2" cy="290.2" r="2.2"></circle>
+                            <circle cx="194.2" cy="314.2" r="2.2"></circle>
+                            <circle cx="2.2" cy="314.2" r="2.2"></circle>
+                            <circle cx="218.2" cy="314.2" r="2.2"></circle>
+                            <circle cx="26.2" cy="314.2" r="2.2"></circle>
+                            <circle cx="242.2" cy="314.2" r="2.2"></circle>
+                            <circle cx="50.2" cy="314.2" r="2.2"></circle>
+                            <circle cx="266.2" cy="314.2" r="2.2"></circle>
+                            <circle cx="74.2" cy="314.2" r="2.2"></circle>
+                            <circle cx="290.2" cy="314.2" r="2.2"></circle>
+                            <circle cx="98.2" cy="314.2" r="2.2"></circle>
+                            <circle cx="314.2" cy="314.2" r="2.2"></circle>
+                            <circle cx="122.2" cy="314.2" r="2.2"></circle>
+                            <circle cx="338.2" cy="314.2" r="2.2"></circle>
+                            <circle cx="146.2" cy="314.2" r="2.2"></circle>
+                            <circle cx="170.2" cy="314.2" r="2.2"></circle>
+                            <circle cx="194.2" cy="338.2" r="2.2"></circle>
+                            <circle cx="2.2" cy="338.2" r="2.2"></circle>
+                            <circle cx="218.2" cy="338.2" r="2.2"></circle>
+                            <circle cx="26.2" cy="338.2" r="2.2"></circle>
+                            <circle cx="242.2" cy="338.2" r="2.2"></circle>
+                            <circle cx="50.2" cy="338.2" r="2.2"></circle>
+                            <circle cx="266.2" cy="338.2" r="2.2"></circle>
+                            <circle cx="74.2" cy="338.2" r="2.2"></circle>
+                            <circle cx="290.2" cy="338.2" r="2.2"></circle>
+                            <circle cx="98.2" cy="338.2" r="2.2"></circle>
+                            <circle cx="314.2" cy="338.2" r="2.2"></circle>
+                            <circle cx="122.2" cy="338.2" r="2.2"></circle>
+                            <circle cx="338.2" cy="338.2" r="2.2"></circle>
+                            <circle cx="146.2" cy="338.2" r="2.2"></circle>
+                            <circle cx="170.2" cy="338.2" r="2.2"></circle>
+                        </svg>
+                    </figure>
+    
+                    <!-- Image -->
+                    <img src="assets/images/about/01.jpg" class="rounded-3 position-relative" alt="">
+    
+                    <!-- Client rating START -->
+                    <div class="position-absolute bottom-0 start-0 z-index-1 mb-4 ms-5">
+                        <div class="bg-body d-flex d-inline-block rounded-3 position-relative p-3">	
+    
+                            <!-- Element -->
+                            <img src="assets/images/element/01.svg" class="position-absolute top-0 start-0 translate-middle w-40px" alt="">
+    
+                            <!-- Avatar group -->
+                            <div class="me-4">
+                                <h6 class="fw-light">Customers</h6>
+                                <!-- Avatar group -->
+                                <ul class="avatar-group mb-0">
+                                    <li class="avatar avatar-sm">
+                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/01.jpg" alt="avatar">
+                                    </li>
+                                    <li class="avatar avatar-sm">
+                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/02.jpg" alt="avatar">
+                                    </li>
+                                    <li class="avatar avatar-sm">
+                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/03.jpg" alt="avatar">
+                                    </li>
+                                    <li class="avatar avatar-sm">
+                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/04.jpg" alt="avatar">
+                                    </li>
+                                    <li class="avatar avatar-sm">
+                                        <div class="avatar-img rounded-circle bg-primary">
+                                            <span class="text-white position-absolute top-50 start-50 translate-middle small">1K+</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+    
+                            <!-- Rating -->
+                            <div>
+                                <h6 class="fw-light mb-3">Rating</h6>
+                                <h6 class="m-0">4.5<i class="fa-solid fa-star text-warning ms-1"></i></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Client rating END -->
+                </div>
+                <!-- Left side END -->
+    
+                <!-- Right side START -->
+                <div class="col-lg-6">
+                    <h2 class="mb-3 mb-lg-5">The Best Holidays Start Here!</h2>
+                    <p class="mb-3 mb-lg-5">Don't forget to grab an awesome hotel deal to save massive on your stay.</p>
+    
+                    <!-- Features START -->
+                    <div class="row g-4">
+                        <!-- Item -->
+                        <div class="col-sm-6">
+                            <div class="icon-lg bg-success bg-opacity-10 text-success rounded-circle"><i class="fa-solid fa-utensils"></i></div>
+                            <h5 class="mt-2">Quality Food</h5>
+                            <p class="mb-0">Departure defective arranging rapturous did. Conduct denied adding worthy little.</p>
+                        </div>
+                        <!-- Item -->
+                        <div class="col-sm-6">
+                            <div class="icon-lg bg-danger bg-opacity-10 text-danger rounded-circle"><i class="bi bi-stopwatch-fill"></i></div>
+                            <h5 class="mt-2">Quick Services</h5>
+                            <p class="mb-0">Supposing so be resolving breakfast am or perfectly. </p>
+                        </div>
+                        <!-- Item -->
+                        <div class="col-sm-6">
+                            <div class="icon-lg bg-orange bg-opacity-10 text-orange rounded-circle"><i class="bi bi-shield-fill-check"></i></div>
+                            <h5 class="mt-2">High Security</h5>
+                            <p class="mb-0">Arranging rapturous did believe him all had supported. </p>
+                        </div>
+                        <!-- Item -->
+                        <div class="col-sm-6">
+                            <div class="icon-lg bg-info bg-opacity-10 text-info rounded-circle"><i class="bi bi-lightning-fill"></i></div>
+                            <h5 class="mt-2">24 Hours Alert</h5>
+                            <p class="mb-0">Rapturous did believe him all had supported.</p>
+                        </div>		
+                    </div>
+                    <!-- Features END -->
+    
+                </div>
+                <!-- Right side END -->
+            </div>
+        </div>
+    </section>
+    <!-- =======================
+    About END -->
+    
+
+    
+    <!-- =======================
+    Download app START -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="row g-4">
+    
+                <!-- Help -->
+                <div class="col-md-6 col-xxl-6">
+                    <div class="bg-body d-flex rounded-3 h-100 p-4">
+                        <h3><i class="fa-solid fa-hand-holding-heart"></i></h3>
+                        <div class="ms-3">
+                            <h5>24x7 Help</h5>
+                            <p class="mb-0">If we fall short of your expectation in any way, let us know</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Trust -->
+                <div class="col-md-6 col-xxl-6">
+                    <div class="bg-body d-flex rounded-3 h-100 p-4">
+                        <h3><i class="fa-solid fa-hand-holding-usd"></i></h3>
+                        <div class="ms-3">
+                            <h5>Payment Trust</h5>
+                            <p class="mb-0">All refunds come with no questions asked guarantee</p>
+                        </div>
+                    </div>
+                </div>
+    
+    
+            </div>
+        </div>
+    </section>
+    <!-- =======================
+    Download app END -->
+    
+    </main>
+
+
+
+
+
+
+    <footer class="bg-dark pt-5">
+        <div class="container">
+            <!-- Row START -->
+            <div class="row g-4">
+    
+                <!-- Widget 1 START -->
+                <div class="col-lg-3">
+                    <!-- logo -->
+                    <a href="index.html">
+                        <img class="h-40px" src="assets/images/logo-light.svg" alt="logo">
+                    </a>
+                    <p class="my-3 text-muted">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                    <p class="mb-2"><a href="#" class="text-muted text-primary-hover"><i class="bi bi-telephone me-2"></i>+1234 568 963</a> </p>
+                    <p class="mb-0"><a href="#" class="text-muted text-primary-hover"><i class="bi bi-envelope me-2"></i>info@eugeniolopez.com</a></p>
+                </div>
+                <!-- Widget 1 END -->
+    
+                <!-- Widget 2 START -->
+                <div class="col-lg-8 ms-auto">
+                    <div class="row g-3">
+                        <!-- Link block -->
+                        <div class="col-6 col-md-4">
+                            <h5 class="text-white mb-2 mb-md-4">Page</h5>
+                            <ul class="nav flex-column text-primary-hover">
+                                <li class="nav-item"><a class="nav-link text-muted" href="#">About us</a></li>
+                                <li class="nav-item"><a class="nav-link text-muted" href="#">Contact us</a></li>
+                                <li class="nav-item"><a class="nav-link text-muted" href="#">News and Blog</a></li>
+                            </ul>
+                        </div>
+    
+                        <!-- Link block -->
+                        <div class="col-6 col-md-4">
+                            <h5 class="text-white mb-2 mb-md-4">Link</h5>
+                            <ul class="nav flex-column text-primary-hover">
+                                <li class="nav-item"><a class="nav-link text-muted" href="#">Sign up</a></li>
+                                <li class="nav-item"><a class="nav-link text-muted" href="#">Sign in</a></li>
+                                <li class="nav-item"><a class="nav-link text-muted" href="#">Privacy Policy</a></li>
+                                <li class="nav-item"><a class="nav-link text-muted" href="#">Terms</a></li>
+                                <li class="nav-item"><a class="nav-link text-muted" href="#">Cookie</a></li>
+                                <li class="nav-item"><a class="nav-link text-muted" href="#">Support</a></li>
+                            </ul>
+                        </div>
+                                        
+                        <!-- Link block -->
+                        <div class="col-6 col-md-4">
+                            <h5 class="text-white mb-2 mb-md-4">Global Site</h5>
+                            <ul class="nav flex-column text-primary-hover">
+                                <li class="nav-item"><a class="nav-link text-muted" href="#">Philippines</a></li>
+                                <li class="nav-item"><a class="nav-link text-muted" href="#">California</a></li>
+                                <li class="nav-item"><a class="nav-link text-muted" href="#">Indonesia</a></li>
+                                <li class="nav-item"><a class="nav-link text-muted" href="#">Canada</a></li>
+                                <li class="nav-item"><a class="nav-link text-muted" href="#">Malaysia</a></li>
+                            </ul>
+                        </div>
+    
+                     
+                    </div>
+                </div>
+                <!-- Widget 2 END -->
+    
+            </div><!-- Row END -->
+    
+           
+    
+            <!-- Payment and card -->
+            <div class="row g-4 justify-content-between mt-0 mt-md-2">
+    
+                <!-- Payment card -->
+                <div class="col-sm-7 col-md-6 col-lg-4">
+                    <h5 class="text-white mb-2">Payment & Security</h5>
+                    <ul class="list-inline mb-0 mt-3">
+                        <li class="list-inline-item"> <a href="#"><img src="assets/images/element/paypal.svg" class="h-30px" alt=""></a></li>
+                        <li class="list-inline-item"> <a href="#"><img src="assets/images/element/visa.svg" class="h-30px" alt=""></a></li>
+                        <li class="list-inline-item"> <a href="#"><img src="assets/images/element/mastercard.svg" class="h-30px" alt=""></a></li>
+                        <li class="list-inline-item"> <a href="#"><img src="assets/images/element/expresscard.svg" class="h-30px" alt=""></a></li>
+                    </ul>
+                </div>
+    
+                <!-- Social media icon -->
+                <div class="col-sm-5 col-md-6 col-lg-3 text-sm-end">
+                    <h5 class="text-white mb-2">Follow us on</h5>
+                    <ul class="list-inline mb-0 mt-3">
+                        <li class="list-inline-item"> <a class="btn btn-sm px-2 bg-facebook mb-0" href="#"><i class="fab fa-fw fa-facebook-f"></i></a> </li>
+                        <li class="list-inline-item"> <a class="btn btn-sm shadow px-2 bg-instagram mb-0" href="#"><i class="fab fa-fw fa-instagram"></i></a> </li>
+                        <li class="list-inline-item"> <a class="btn btn-sm shadow px-2 bg-twitter mb-0" href="#"><i class="fab fa-fw fa-twitter"></i></a> </li>
+                        <li class="list-inline-item"> <a class="btn btn-sm shadow px-2 bg-linkedin mb-0" href="#"><i class="fab fa-fw fa-linkedin-in"></i></a> </li>
+                    </ul>	
+                </div>
+            </div>
+    
+            <!-- Divider -->
+            <hr class="mt-4 mb-0">
+    
+            <!-- Bottom footer -->
+            <div class="row">
+                <div class="container">
+                    <div class="d-lg-flex justify-content-between align-items-center py-3 text-center text-lg-start">
+                        <!-- copyright text -->
+                        <div class="text-muted text-primary-hover"> Copyrights <a href="#" class="text-muted">©2022 Eugenio Lopez</a>. All rights reserved. </div>
+                        <!-- copyright links-->
+                        <div class="nav mt-2 mt-lg-0">
+                            <ul class="list-inline text-primary-hover mx-auto mb-0">
+                                <li class="list-inline-item me-0"><a class="nav-link py-1 text-muted" href="#">Privacy policy</a></li>
+                                <li class="list-inline-item me-0"><a class="nav-link py-1 text-muted" href="#">Terms and conditions</a></li>
+                                <li class="list-inline-item me-0"><a class="nav-link py-1 text-muted pe-0" href="#">Refund policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- Back to top -->
+<div class="back-top"></div>
+
+<!-- Bootstrap JS -->
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Vendors -->
+<script src="assets/vendor/tiny-slider/tiny-slider.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.js"></script>
+<script src="assets/vendor/flatpickr/js/flatpickr.min.js"></script>
+<script src="assets/vendor/choices/js/choices.min.js"></script>
+
+<!-- ThemeFunctions -->
+<script src="assets/js/functions.js"></script>
+
+</body>
+</html>
